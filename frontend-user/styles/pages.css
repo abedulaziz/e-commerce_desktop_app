@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   font-family: 'Raleway', sans-serif;
   padding-bottom: 58.4px;
+  position: relative;
 }
 
 .container {
@@ -32,9 +33,13 @@ header .content {
   align-items: center;
 }
 
+header .content .loved_items {
+  cursor: pointer;
+}
+
 header .content .loved_items i{
-  color: red;
-  font-size: 23px;
+  color: rgb(248, 124, 124);
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -55,6 +60,107 @@ header .content .side_links button{
 header .content .side_links #login {
   border: none;
   margin-right: 10px;
+}
+
+/* main */
+
+/* categories pages specifics */
+main .content .heading h1{
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 100;
+}
+
+main .content .categories{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+main .content .category {
+  background-color: var(--theme-color-two);
+  color: #FFF;
+  padding-bottom: 20px;
+  width: 49%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #858585;
+}
+
+main .content .category .img-wrapper {
+  height: 300px;
+}
+
+main .content .category .img-wrapper img, main .content .item .img-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+main .content .category .about, main .content .item .about{
+  padding: 0 20px;
+}
+
+main .content .category .about .title {
+  text-align: center;
+}
+
+main .content .category .about .description , main .content .item .about .description {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+main .content .category .about .visit_categ {
+  text-align: center;
+}
+
+main .content .category .about .visit_categ button {
+  background-color: rgba(0, 255, 255, 0.65);
+  transition: background-color .5s ease;
+  padding: 10px 15px;
+  border: none;
+  color: #FFF;
+  border-radius: 3px;
+}
+
+main .content .category .about .visit_categ button:hover {
+  background-color: var(--theme-color);
+}
+
+/* items page specifics */
+main .content .items{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main .content .items .item {
+  background-color: var(--theme-color-two);
+  color: #FFF;
+  padding-bottom: 20px;
+  width: 31%;
+  margin-right: 2.333%;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px #858585;
+}
+
+main .content .item .img-wrapper {
+  height: 200px;
+}
+
+main .content .item .about .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .content .item .about .title i {
+  cursor: pointer;
+}
+
+main .content .item .about .description {
+  margin: 0;
 }
 
 
@@ -85,4 +191,10 @@ footer .social-media > div:not(:last-child) {
 
 footer .social-media a {
   color: #FFF;
+}
+
+@media (max-width: 902px) {
+  main .content .categories .category {
+    width: 100%;
+  }
 }
