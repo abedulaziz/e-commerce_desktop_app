@@ -29,7 +29,7 @@ header {
 header .content {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 0;
   align-items: center;
 }
 
@@ -55,6 +55,13 @@ header .content .side_links button{
   font-weight: 500;
   color: #FFF;
   cursor: pointer;
+}
+
+header .content .side_links .categ_nav_item {
+  border-bottom: 1px solid var(--theme-color);
+  padding: 7px;
+  cursor: pointer;
+  color: #FFF;
 }
 
 header .content .side_links #login {
@@ -122,6 +129,7 @@ main .content .category .about .visit_categ button {
   border: none;
   color: #FFF;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 main .content .category .about .visit_categ button:hover {
@@ -140,9 +148,12 @@ main .content .items .item {
   color: #FFF;
   padding-bottom: 20px;
   width: 31%;
-  margin-right: 2.333%;
   margin-bottom: 10px;
   box-shadow: 0 0 10px #858585;
+}
+
+main .content .items .item:not(:nth-child(3n+0)) {
+  margin-right: 3.5%;
 }
 
 main .content .item .img-wrapper {
@@ -157,6 +168,10 @@ main .content .item .about .title {
 
 main .content .item .about .title i {
   cursor: pointer;
+}
+
+main .content .item .about .title i.fa-solid.fa-heart {
+  color: rgb(255, 39, 39);
 }
 
 main .content .item .about .description {
@@ -191,6 +206,11 @@ footer .social-media > div:not(:last-child) {
 
 footer .social-media a {
   color: #FFF;
+}
+
+footer .social-media i:hover {
+  color: var(--theme-color);
+  transition: color .3s ease;
 }
 
 @media (max-width: 902px) {
