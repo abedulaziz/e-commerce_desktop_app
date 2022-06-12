@@ -1,0 +1,88 @@
+
+:root {
+  --theme-color: aqua;
+  --theme-color-two: #150F0F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 58.4px;
+}
+
+.container {
+  padding: 0 8vw;
+}
+
+/* header */
+header {
+  background-color: var(--theme-color-two);
+  color: #FFF;
+}
+
+header .content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+header .content .loved_items i{
+  color: red;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+header .content .title {
+  font-size: 20px;
+}
+
+header .content .side_links button{
+  padding: 10px 15px;
+  background-color: inherit;
+  border: 1px solid var(--theme-color);
+  border-radius: 3px;
+  font-weight: 500;
+  color: #FFF;
+  cursor: pointer;
+}
+
+header .content .side_links #login {
+  border: none;
+  margin-right: 10px;
+}
+
+
+/* footer */
+footer {
+  background-color: var(--theme-color-two);
+  color: #FFF;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+footer .social-media {
+  display: flex;
+}
+
+footer .social-media > div:not(:last-child) {
+  margin-right: 20px;
+}
+
+footer .social-media a {
+  color: #FFF;
+}
