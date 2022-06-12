@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->string("name");
             $table->text("desc");
-            $table->string("file_path");
+            $table->string("img_path");
             $table->integer("category_id");
             $table->timestamps();
         });
