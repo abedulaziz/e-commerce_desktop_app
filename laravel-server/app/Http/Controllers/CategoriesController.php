@@ -27,7 +27,7 @@ class CategoriesController extends Controller
 
     // display items related to the selected category
     public function displayItems(Request $request) {
-        $token = $request->categ_id;
+        $categ = $request->categ_id;
         $items = Category::find($categ)->items;
 
         if (auth()->user()) {

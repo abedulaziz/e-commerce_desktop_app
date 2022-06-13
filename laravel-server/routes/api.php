@@ -39,6 +39,6 @@ Route::post("/list-favorited-items", [ItemsController::class, "listFavorited"]);
 
 // categories routes
 Route::post("/upload-categories", [CategoriesController::class, "uploadCategory"]);
-Route::post("/items", [CategoriesController::class, "displayItems"]);
+Route::post("/list-items", [CategoriesController::class, "displayItems"]);
 Route::post("/list-categories", [CategoriesController::class, "listCategories"]);
 
