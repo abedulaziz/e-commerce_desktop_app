@@ -10,13 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./../styles/normalize.css">
   <link rel="stylesheet" href="./../styles/main.css">
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>Sign Up</title>
 </head>
 <body>
   <div class="sign-up">
     <div class="container">
       <div class="form_wrapper">
-        <form>
+        <form id="registerUserForm">
 
           <h1>Sign Up</h1>
           <div class="username">
@@ -27,7 +29,10 @@
             <input type="text" name="email" placeholder="Email" max="100">
           </div>
           <div class="password">
-            <input type="password" name="password" placeholder="Password" max="100">
+            <input type="password" name="password" placeholder="Password"min='6' max="100">
+          </div>
+          <div class="password_confirmation">
+            <input type="password" name="password_confirmation" placeholder="Password confirmation" min="6" max="100">
           </div>
           <div class="gender">
             <select name="gender" id="gender">
@@ -39,12 +44,13 @@
             <input type="date" name="date_of_birth">
           </div>
           <div class="submit">
-            <input type="button" value="Register">
+            <input id="register" type="button" value="Register">
           </div>
 
         </form>
       </div>
     </div>
   </div>
+  <script src="./../scripts/sign-up_user.js"></script>
 </body>
 </html>

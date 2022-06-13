@@ -36,4 +36,8 @@ class CategoriesController extends Controller
             "items" => $items,
         ], 201);
     }
+
+    public function listCategories(Request $request) {
+        
+    }
 }

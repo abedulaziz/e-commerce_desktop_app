@@ -43,6 +43,10 @@ header .content .loved_items i{
   cursor: pointer;
 }
 
+header .content .loved_items a{
+  color: #FFF;
+}
+
 header .content .title {
   font-size: 20px;
 }

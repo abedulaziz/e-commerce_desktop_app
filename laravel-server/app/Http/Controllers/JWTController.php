@@ -35,23 +35,23 @@ class JWTController extends Controller
             'password' => 'required|string|confirmed|min:6',
             'gender' => 'required|string',
         ]);
-
         if($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
 
         $user = User::create([
-                'fname' => $request->fname,
-                'lname' => $request->lname,
-                'date_of_birth' => $request->date_of_birth,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'gender' => $request->gender,
-            ]);
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+            'gender' => $request->gender,
+            'date_of_birth' => $request->date_of_birth,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         return response()->json([
             'message' => 'User successfully registered',
-            'user' => $user
+            'user' => $user,
+            "token" => $this->respondWithToken(auth()->attempt($validator->validated())),
         ], 201);
     }
 
