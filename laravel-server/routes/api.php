@@ -42,4 +42,3 @@ Route::post("/upload-categories", [CategoriesController::class, "uploadCategory"
 Route::post("/items", [CategoriesController::class, "displayItems"]);
 Route::post("/list-categories", [CategoriesController::class, "listCategories"]);
 
-Route::resource('/products', 'App\Http\Controllers\ProductController');

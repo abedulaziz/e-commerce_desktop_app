@@ -28,7 +28,7 @@ class CategoriesController extends Controller
     // display items related to the selected category
     public function displayItems(Request $request) {
 
-        $categ = $request->categ_id;
+        $token = $request->categ_id;
         $items = Category::find($categ)->items;
 
         return response()->json([
@@ -38,6 +38,20 @@ class CategoriesController extends Controller
     }
 
     public function listCategories(Request $request) {
-        
+
+        if (auth()->user()) {
+            return response()->json([
+                "isAuthorised" => true,
+                "categories" => Category::select("id", "name", "desc", "img_path")->get(),
+            ]);
+        }
+        else {
+            return response()->json([
+                "isAuthorised" => false,
+                "categories" => Category::select("id", "name", "desc", "img_path")->get(),
+            ]);
+        }
+
+
     }
 }
