@@ -35,6 +35,7 @@ registerBut.addEventListener("click", function() {
   .then(function(res) {
     console.log(res.data.token);
     localStorage.setItem("access_token", res.data.token.original.access_token);
+    window.location.href = "./../index.html"
   })
   .catch(err => {
     console.log(err);

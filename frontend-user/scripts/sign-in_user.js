@@ -22,6 +22,7 @@ loginBut.addEventListener("click", function() {
   .then(function(res) {
     console.log(res);
     localStorage.setItem("access_token", res.data.access_token);
+    window.location.href = "./../index.html"
   })
   .catch(err => {
     console.log(err);
