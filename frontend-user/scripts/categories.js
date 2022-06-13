@@ -29,7 +29,7 @@ window.onload = function() {
         categories.addEventListener("click", (ev) => {
           if (ev.target.id === "visitCategBut") {
             const categoryId = ev.target.closest(".category").id
-            console.log(categoryId);
+            localStorage.setItem("categ_id", categoryId);
           }
         })
       }
@@ -38,17 +38,17 @@ window.onload = function() {
       }
 
       for (let i =0; i< data.length; i++) {
-        data = data[i]
+        categoryObject = data[i]
 
         let category = document.createElement("div")
         category.classList.add("category")
-        category.id = data.id
+        category.id = categoryObject.id
 
         let imgWrapper = document.createElement("div")
         imgWrapper.className = "img-wrapper"
         
         let categImg = document.createElement("img")
-        categImg.src = data.img_path;
+        categImg.src = categoryObject.img_path;
 
         imgWrapper.appendChild(categImg)
 
@@ -57,11 +57,11 @@ window.onload = function() {
 
         let title = document.createElement("div")
         title.className = "title"
-        title.innerHTML = `<h3>${data.name}</h3>`
+        title.innerHTML = `<h3>${categoryObject.name}</h3>`
 
         let description = document.createElement("div")
         description.className = "description"
-        description.innerText = data.desc
+        description.innerText = categoryObject.desc
 
         let visitCateg = document.createElement("div")
         visitCateg.className = "visit_categ"
