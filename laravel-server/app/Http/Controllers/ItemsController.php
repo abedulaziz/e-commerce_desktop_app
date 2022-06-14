@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Favorited_items;
+use Auth;
 
 class ItemsController extends Controller
 {
@@ -24,16 +25,30 @@ class ItemsController extends Controller
     }
 
     // favorite item
+
     public function favoriteItem(Request $request) {
 
-        Favorited_items::insert([
-            "user_id" => $request->user_id,
-            "item_id" => $request->item_id,
-        ]);
+        $id = Auth::id();
 
-        return response()->json([
-            "message" => "Item favoritied",
-        ], 201);
+        if (auth()->user()) {
+            Favorited_items::insert([
+                "user_id" => Auth::guard('api')->user()->id,
+                "item_id" => $request->item_id,
+
+            ]);
+            return response()->json([
+                "message" => "Item favoritied",
+            ], 201);
+        }
+        else{
+
+            return response()->json([
+                "message" => "Unauthorised user",
+            ], 201);
+
+        }
+
+
     }
 
     // unfavorite item
